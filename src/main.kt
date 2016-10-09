@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch
  */
 
 fun main(args: Array<String>) {
-    val counter = CountDownLatch(3)
+    val counter = CountDownLatch(11)
     val ee = EventEmitter()
     ee.on("bla") {
         msg: String ->
@@ -17,8 +17,13 @@ fun main(args: Array<String>) {
         println("once: $msg")
         counter.countDown()
     }
-    for(c in 1 .. 10) {
+    ee.once("ble") {
+        msg: Int ->
+        println("once Int: $msg")
+    }
+    for(c: Int in 1 .. 10) {
         ee.emit("bla", "test $c")
+        ee.emit("bla", c)
     }
 
     counter.await()
