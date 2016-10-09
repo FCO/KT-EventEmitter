@@ -7,23 +7,24 @@ import java.util.concurrent.CountDownLatch
 fun main(args: Array<String>) {
     val counter = CountDownLatch(11)
     val ee = EventEmitter()
-    ee.on("bla") {
+    ee.on("event1") {
         msg: String ->
         println("on: $msg")
         counter.countDown()
     }
-    ee.once("bla") {
+    ee.once("event1") {
         msg: String ->
         println("once: $msg")
         counter.countDown()
     }
-    ee.once("ble") {
+    ee.once("event1") {
         msg: Int ->
-        println("once Int: $msg")
+        println("once Integer: $msg")
     }
-    for(c: Int in 1 .. 10) {
-        ee.emit("bla", "test $c")
-        ee.emit("bla", c)
+
+    for(c in 1 .. 10) {
+        ee.emit("event1", "test $c")
+        ee.emit("event1", c)
     }
 
     counter.await()

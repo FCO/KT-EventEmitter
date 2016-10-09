@@ -26,6 +26,7 @@ open class EventEmitter {
             return ret
         }
     }
+
     val listeners =  Listeners()
     val listOnce  =  Listeners(once = true)
 
