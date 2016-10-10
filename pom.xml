@@ -34,6 +34,12 @@
             <artifactId>spek-junit-platform-engine</artifactId>
             <version>1.0.89</version>
         </dependency>
+        <dependency>
+            <groupId>com.winterbe</groupId>
+            <artifactId>expekt</artifactId>
+            <version>0.5.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
