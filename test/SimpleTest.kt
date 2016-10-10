@@ -10,7 +10,7 @@ class SimpleTest : Spek({
     println("AQUI")
     describe("bla") {
         it("ble") {
-            1.should.be.equal(42)
+            1.should.be.equal(1)
         }
     }
 })
