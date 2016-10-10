@@ -24,11 +24,21 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains.spek</groupId>
+            <artifactId>spek-api</artifactId>
+            <version>1.0.89</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.spek</groupId>
+            <artifactId>spek-junit-platform-engine</artifactId>
+            <version>1.0.89</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <sourceDirectory>src</sourceDirectory>
-        <testSourceDirectory>test</testSourceDirectory>
+        <sourceDirectory>${basedir}/src</sourceDirectory>
+        <testSourceDirectory>${basedir}/test</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
