@@ -1,16 +1,9 @@
-import com.winterbe.expekt.should
-import org.jetbrains.spek.api.Spek
-import org.jetbrains.spek.api.dsl.describe
-import org.jetbrains.spek.api.dsl.it
+import io.kotlintest.specs.StringSpec
 
-/**
- * Created by fernando on 10/10/16.
- */
-class SimpleTest : Spek({
-    println("AQUI")
-    describe("bla") {
-        it("ble") {
-            1.should.be.equal(1)
+class StringSpecExample : StringSpec() {
+    init {
+        "strings.length should return size of string" {
+            "hello".length shouldBe 5
         }
     }
-})
+}
